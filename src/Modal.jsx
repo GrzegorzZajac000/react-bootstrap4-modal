@@ -141,7 +141,7 @@ class Modal extends React.Component {
           onMouseDown={onClickBackdrop}
           {...other}
         >
-          <div className={classNames('modal-dialog', dialogClassName)} role="document" onClick={this.stopPropagation}>
+          <div className={classNames('modal-dialog', dialogClassName)} role="document" onMouseDown={this.stopPropagation} onMouseUp={this.stopPropagation} onClick={this.stopPropagation}>
             <div className="modal-content">
               {children}
             </div>
