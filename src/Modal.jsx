@@ -103,7 +103,7 @@ class Modal extends React.Component {
       return (
         <div
           className={classNames('modal-backdrop', { show: this.state.visible, fade: this.props.fade })}
-          onClick={this.props.onClickBackdrop}
+          onMouseDown={this.props.onClickBackdrop}
           role="presentation"
           style={{ zIndex: 1040 + this.state.modalIndex }}
         />
