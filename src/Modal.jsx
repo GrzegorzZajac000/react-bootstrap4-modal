@@ -138,7 +138,7 @@ class Modal extends React.Component {
           role="dialog"
           aria-hidden={!this.state.visible}
           tabIndex="-1"
-          onClick={onClickBackdrop}
+          onMouseDown={onClickBackdrop}
           {...other}
         >
           <div className={classNames('modal-dialog', dialogClassName)} role="document" onClick={this.stopPropagation}>
