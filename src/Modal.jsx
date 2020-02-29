@@ -4,7 +4,7 @@ import classNames from 'classnames';
 
 let modalsShowing = 0;
 
-function modalWillShow() {
+function modalWillShow () {
   if (modalsShowing === 0 && document) {
     document.body.classList.add('modal-open');
   }
@@ -12,13 +12,13 @@ function modalWillShow() {
   modalsShowing += 1;
 }
 
-function modalWillHide() {
+function modalWillHide () {
   modalsShowing -= 1;
 
   if (modalsShowing === 0 && document) {
     document.body.classList.remove('modal-open');
   }
-}
+};
 
 class Modal extends React.Component {
   static propTypes = {
@@ -52,7 +52,7 @@ class Modal extends React.Component {
     if (this.props.visible) {
       modalWillShow();
     }
-  }
+  };
 
   // Shenanigans to allow the CSS fade to happen before we stop rendering the dialog or divs
   componentDidUpdate = (prevProps) => {
@@ -85,18 +85,18 @@ class Modal extends React.Component {
         this.setState({ visible: this.props.visible });
       }
     }
-  }
+  };
 
   componentWillUnmount = () => {
     this.unmounting = true;
     if (this.props.visible) {
       modalWillHide();
     }
-  }
+  };
 
   stopPropagation = (event) => {
     event.stopPropagation();
-  }
+  };
 
   renderBackdrop = () => {
     if (this.state.visible || this.state.transitioning) {
@@ -111,7 +111,7 @@ class Modal extends React.Component {
     }
 
     return null;
-  }
+  };
 
   render = () => {
     const {
@@ -126,9 +126,7 @@ class Modal extends React.Component {
     } = this.props;
 
     return (
-      <div
-        {...wrapperProps}
-      >
+      <div {...wrapperProps}>
         <div
           className={classNames('modal', { show: this.state.visible, fade: this.props.fade }, className)}
           style={{

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Modal from './index';
+import Modal from './Modal';
 
 const ConfirmModal = ({ visible, onOK, onCancel, children, disableButtons = false, okText = 'OK', cancelText = 'Cancel', ...other }) => (
   <Modal visible={visible} {...other}>
@@ -22,13 +22,13 @@ const ConfirmModal = ({ visible, onOK, onCancel, children, disableButtons = fals
 );
 
 ConfirmModal.propTypes = {
-  children: PropTypes.node.isRequired,
-  visible: PropTypes.bool.isRequired,
-  onOK: PropTypes.func.isRequired,
-  onCancel: PropTypes.func.isRequired,
-  disableButtons: PropTypes.bool,
-  okText: PropTypes.string,
-  cancelText: PropTypes.string,
+  children:         PropTypes.node.isRequired,
+  visible:          PropTypes.bool.isRequired,
+  onOK:             PropTypes.func.isRequired,
+  onCancel:         PropTypes.func.isRequired,
+  disableButtons:   PropTypes.bool,
+  okText:           PropTypes.string,
+  cancelText:       PropTypes.string,
 };
 
 ConfirmModal.defaultProps = {

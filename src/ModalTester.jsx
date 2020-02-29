@@ -1,5 +1,5 @@
 import React from 'react';
-import Modal from '../src/Modal';
+import Modal from './Modal';
 
 class ModalTester extends React.Component {
   constructor(props) {
@@ -7,19 +7,19 @@ class ModalTester extends React.Component {
     this.state = {
       visible: false,
     };
-  }
+  };
 
   showModal = () => {
     this.setState({ visible: true });
-  }
+  };
 
   hideModal = () => {
     this.setState({ visible: false });
-  }
+  };
 
   render = () => (
     <div>
-      <button className="btn btn-primary" onClick={this.showModal}>Show modal</button>
+      <button type="button" className="btn btn-primary" onClick={this.showModal}>Show modal</button>
       <Modal visible={this.state.visible} dialogClassName="modal-lg">
         <div className="modal-header">
           <h5 className="modal-title">Test modal</h5>
